@@ -7,7 +7,7 @@ class Main {
         try {
             File file = new File("../assets/input.txt");
             Scanner myReader = new Scanner(file);
-            Opcodes opcodes = new Opcodes();
+            Funct funct = new Funct();
             String binary = "";
 
             while (myReader.hasNextLine()) {
@@ -15,23 +15,26 @@ class Main {
                 String[] lineItems = line.split("\\s+|,|\\(|\\)");
 
                 for (int i = 0; i < lineItems.length; i++) {
-                    String opcode = opcodes.get(lineItems[i]);
-                    int isRegister = Utils.checkIfOperator(lineItems[i]);
+                    String opcode = funct.get(lineItems[i]);
+                    int registerNumber = Utils.returnRegisterNumber(lineItems[i]);
                     int number = Utils.tryParseInt(lineItems[i]);
 
                     if (opcode != null) {
                         binary += opcode;
-                    } else if (isRegister != -1) {
-                        binary += Integer.toBinaryString(isRegister);
+                    } else if (registerNumber != -1) {
+                        binary += Integer.toBinaryString(registerNumber);
                     } else if (number != -1) {
                         binary += Integer.toBinaryString(number);
+                    }
+                    else {
+                        // throw Exception?
                     }
 
                     // System.out.println(i + ": " + binary + "\n");
                 }
 
             }
-            
+
             System.out.println(binary);
 
             myReader.close();

@@ -3,7 +3,7 @@ class Utils {
         return lineItem.matches("\\d+") ? Integer.parseInt(lineItem) : -1;
     }
 
-    public static int checkIfOperator(String lineItem) {
+    public static int returnRegisterNumber(String lineItem) {
         for (int i = 0; i < lineItem.length(); i += 1) {
             if (lineItem.charAt(i) == '$') {
                 switch (lineItem.charAt(i + 1)) {
@@ -26,7 +26,7 @@ class Utils {
                 return Integer.parseInt(lineItem.replaceAll("\\D+", ""));
             }
         }
-        
+
         return -1;
     }
 }
