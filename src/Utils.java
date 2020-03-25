@@ -4,28 +4,29 @@ class Utils {
     }
 
     public static int checkIfOperator(String lineItem) {
-     for(int i = 0; i < lineItem.length(); i += 1) {
-         if (lineItem.charAt(i) == '$') {
-             switch(lineItem.charAt(i + 1)) {
-                 case 'r': {
-                     
-                     break;
-                 }
+        for (int i = 0; i < lineItem.length(); i += 1) {
+            if (lineItem.charAt(i) == '$') {
+                switch (lineItem.charAt(i + 1)) {
+                    case 'r': {
 
-                 case 't': {
+                        break;
+                    }
+                    case 't': {
 
-                     break;
-                 }
+                        break;
+                    }
+                    case 's': {
 
-                 case 's': {
+                        break;
+                    }
+                    default:
+                        break;
+                }
 
-                     break;
-                 }
-                 default: break;
-             }
-             return Integer.parseInt(lineItem.replaceAll("\\D+",""));
+                return Integer.parseInt(lineItem.replaceAll("\\D+", ""));
             }
         }
+        
         return -1;
     }
 }

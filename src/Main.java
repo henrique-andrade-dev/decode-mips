@@ -13,7 +13,7 @@ class Main {
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
                 String[] lineItems = line.split("\\s+|,|\\(|\\)");
-                
+
                 for (int i = 0; i < lineItems.length; i++) {
                     String opcode = opcodes.get(lineItems[i]);
                     int isRegister = Utils.checkIfOperator(lineItems[i]);
@@ -27,11 +27,11 @@ class Main {
                         binary += Integer.toBinaryString(number);
                     }
 
-                    
                     // System.out.println(i + ": " + binary + "\n");
                 }
-                
+
             }
+            
             System.out.println(binary);
 
             myReader.close();
