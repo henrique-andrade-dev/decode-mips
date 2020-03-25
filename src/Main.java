@@ -9,35 +9,21 @@ class Main {
             File file = new File("./assets/input.txt");
             Scanner myReader = new Scanner(file);
             Opcodes opcodes = new Opcodes();
-            HashMap<String, String> Opcodes = new HashMap<>();
-            // String[] opcodes = {"add", "addi", "sub", "mult", "div", "neg", "and", "andi", "or", "ori", "xor", "nor", "slt", "slti", "sll", "srl", "lw", "sw", "beq", "bne", "j", "jr", "jal", "nop"};
             String binary = "";
 
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                String[] parts = line.split("\\s+|,|\\(");
+                String[] lineItems = line.split("\\s+|,|\\(");
                 
-                for (int i = 0; i < parts.length; i++) {
-                    System.out.println(parts[i] + "\n");
+                for (int i = 0; i < lineItems.length; i++) {
+                    String opcode = opcodes.get(lineItems[i]);
+
+                    if (opcode != null) {
+                        binary += opcode;
+                    }
                 }
 
-                // switch (parts[0]) {
-                //     case "add": binary += "00000";
-                        
-                //         break;
-
-                //         case "addi": binary += "00000";
-                        
-                //         break;
-                        
-                
-                //     default:
-                //         break;
-                // }
-
-
-
-                //String bin = Integer.toBinaryString(dec);
+                // String bin = Integer.toBinaryString(dec);
 
                 System.out.println();
             }
