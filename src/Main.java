@@ -5,35 +5,34 @@ import java.util.Scanner; // Import the Scanner class to read text files
 class Main {
     public static void main(String[] args) {
         try {
-            File file = new File("./assets/input.txt");
+            File file = new File("../assets/input.txt");
             Scanner myReader = new Scanner(file);
             Opcodes opcodes = new Opcodes();
             String binary = "";
-            int ajoifgdjg = Utils.tryParseInt("12");
-            System.out.println(ajoifgdjg);
 
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                String[] lineItems = line.split("\\s+|,|\\(");
-
-
+                String[] lineItems = line.split("\\s+|,|\\(|\\)");
+                
                 for (int i = 0; i < lineItems.length; i++) {
                     String opcode = opcodes.get(lineItems[i]);
+                    int isRegister = Utils.checkIfOperator(lineItems[i]);
                     int number = Utils.tryParseInt(lineItems[i]);
 
                     if (opcode != null) {
                         binary += opcode;
-                    }
-                    else if (number != -1) {
+                    } else if (isRegister != -1) {
+                        binary += Integer.toBinaryString(isRegister);
+                    } else if (number != -1) {
                         binary += Integer.toBinaryString(number);
                     }
 
                     
-                    System.out.println(i + ": " + binary + "\n");
+                    // System.out.println(i + ": " + binary + "\n");
                 }
                 
-                
             }
+            System.out.println(binary);
 
             myReader.close();
         } catch (FileNotFoundException e) {
