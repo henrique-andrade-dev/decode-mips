@@ -6,35 +6,35 @@ import java.util.*; //
 class Main {
     public static void main(String[] args) {
         try {
-            File myObj = new File("./assets/input.txt");
-            Scanner myReader = new Scanner(myObj);
+            File file = new File("./assets/input.txt");
+            Scanner myReader = new Scanner(file);
+            Opcodes opcodes = new Opcodes();
             HashMap<String, String> Opcodes = new HashMap<>();
-            String[] opcodes = {"add", "addi", "sub", "mult", "div", "neg", "and", "andi", "or", "ori", "xor", "nor", "slt", "slti", "sll", "srl", "lw", "sw", "beq", "bne", "j", "jr", "jal", "nop"};
+            // String[] opcodes = {"add", "addi", "sub", "mult", "div", "neg", "and", "andi", "or", "ori", "xor", "nor", "slt", "slti", "sll", "srl", "lw", "sw", "beq", "bne", "j", "jr", "jal", "nop"};
             String binary = "";
 
             while (myReader.hasNextLine()) {
+                String line = myReader.nextLine();
+                String[] parts = line.split("\\s+|,|\\(");
                 
-                
-                String data = myReader.nextLine();
-                String[] parts = data.split("jgodijfgoi");
-                
-                switch (parts[0]) {
-                    case "add": binary += "00000";
-                        
-                        break;
-
-                        case "addi": binary += "00000";
-                        
-                        break;
-                        
-                
-                    default:
-                        break;
-                }
-
-
                 for (int i = 0; i < parts.length; i++) {
+                    System.out.println(parts[i] + "\n");
                 }
+
+                // switch (parts[0]) {
+                //     case "add": binary += "00000";
+                        
+                //         break;
+
+                //         case "addi": binary += "00000";
+                        
+                //         break;
+                        
+                
+                //     default:
+                //         break;
+                // }
+
 
 
                 //String bin = Integer.toBinaryString(dec);
