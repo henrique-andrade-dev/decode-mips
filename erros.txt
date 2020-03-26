@@ -1,0 +1,3 @@
+1 - Bloco de código prevê "mul", mas instrução informa "mult";
+2 - Documento do cartão MIPS não possui informação do binário para "nop";
+3 - O exemplo de output do formato J está errado, pois contem apenas 31 bits.
