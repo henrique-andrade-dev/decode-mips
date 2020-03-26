@@ -1,4 +1,4 @@
-import java.util.*; // 
+import java.util.*;
 
 class IFormat {
     HashMap<String, String> funct = new HashMap<>();

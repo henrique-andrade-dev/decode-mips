@@ -1,4 +1,4 @@
-import java.util.*; // 
+import java.util.*;
 
 class JFormat {
     HashMap<String, String> funct = new HashMap<>();
@@ -12,4 +12,3 @@ class JFormat {
         return funct.get(param);
     }
 }
-

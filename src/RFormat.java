@@ -1,4 +1,4 @@
-import java.util.*; // 
+import java.util.*;
 
 class RFormat {
     HashMap<String, String> funct = new HashMap<>();
