@@ -5,6 +5,9 @@ os: linux
 dist: trusty
 jdk: oraclejdk8
 
+before_script: cd henrique-andrade-dev/decode-mips
+
 script:
-  - javac src/*.java
-  - jar cvfm decode-mips.jar src/Manifest.mf src/*.class
+  - cd src
+  - javac *.java
+  - jar cvfm ../decode-mips.jar Manifest.mf *.class
