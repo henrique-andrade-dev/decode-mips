@@ -5,9 +5,4 @@ os: linux
 dist: trusty
 jdk: oraclejdk8
 
-before_script: ls -la
-
-script:
-  - cd src
-  - javac *.java
-  - jar cvfm ../decode-mips.jar Manifest.mf *.class
+script: build.sh
