@@ -5,7 +5,7 @@ os: linux
 dist: trusty
 jdk: oraclejdk8
 
-before_script: cd henrique-andrade-dev/decode-mips
+before_script: ls -la
 
 script:
   - cd src
