@@ -6,4 +6,6 @@ dist: trusty
 jdk: oraclejdk8
 
 script:
-  - javac ./src/*.java
+  - cd src
+  - javac *.java
+  - jar cvfm ../decode-mips.jar Manifest.MF *.class
